@@ -177,7 +177,7 @@
         <img class="setimg" src="img13.PNG" alt="hear it is">
     </p>
     <hr>
-   
+
     <h2>13: To directly commit all modified staged files without adding
         them to the staged area (note: you must have to add all the
         files to the staged area at least once when you create them
@@ -217,31 +217,31 @@
         <img class="setimg" src="img16.PNG" alt="hear it is">
     </p>
     <hr>
-      
+
     <h2>16: To ignore a file by git that git don't
         track a or multiple files </h2>
     <hr>
     <p>
-        1). Create a file with name .gitignore 
-		(note: create it from touch command i.e.
-			touch .gitignore
-			Because if you try to create it through the 
-			windows explorer then OS will save it and consider
-			it like a file with empty name and .gitignore
-			extension
-		) <br>
-	2). Write the names of files in .gitignore file which you want
-		to be ignored in this project directry and add this file to 
-		the staged area, <br> 
-	3). Whether that file is in same folder or in some child or
-		grandchild folder or up to so on , that file or the all files
-		with same name in any sub folder of the main project folder
-		will be ignored.
-		-> 	igonore.log // will ignore all the ignore.log from all the
-			sub folders
-		->	*.log //will ignore all the files with extension .log
-		->	ignore/ 	//ignore all the files in ignore folder
-         <br>
+        1). Create a file with name .gitignore
+        (note: create it from touch command i.e.
+        touch .gitignore
+        Because if you try to create it through the
+        windows explorer then OS will save it and consider
+        it like a file with empty name and .gitignore
+        extension
+        ) <br>
+        2). Write the names of files in .gitignore file which you want
+        to be ignored in this project directry and add this file to
+        the staged area, <br>
+        3). Whether that file is in same folder or in some child or
+        grandchild folder or up to so on , that file or the all files
+        with same name in any sub folder of the main project folder
+        will be ignored.
+        -> igonore.log // will ignore all the ignore.log from all the
+        sub folders
+        -> *.log //will ignore all the files with extension .log
+        -> ignore/ //ignore all the files in ignore folder
+        <br>
         <br>
         <img class="setimg" src="img17.PNG" alt="hear it is">
     </p>
@@ -251,32 +251,60 @@
     <hr>
     <p>
         To create a branch
-		git branch Feature1 <br>
-		// A branch with the name Feature1 will be created
-		// By default you are in master branch (your main project)
-            <br>	
-         To switch between a branch <br>
+        git branch Feature1 <br>
+        // A branch with the name Feature1 will be created
+        // By default you are in master branch (your main project)
+        <br>
+        To switch between a branch <br>
 
-		git checkout feature1 <br>
-		//you will be switched to feature1 branch (copy of your master branch)
-	To merge the branch <br>
-		->	switch back to master branch
-			git checkout master <br>
-		-> 	run the command 
-			git merge feature1 <br>
-			The branches and their commits will be merged
-	To check all the present branches <br>
-		-> 	git branch <br>
-	To create and switch a branch at once, then run <br>
-		->	git checkout -b flaskIntegration  <br>
-			flaskIntegration is the name of new branch <br>
+        git checkout feature1 <br>
+        //you will be switched to feature1 branch (copy of your master branch)
+        To merge the branch <br>
+        -> switch back to master branch
+        git checkout master <br>
+        -> run the command
+        git merge feature1 <br>
+        The branches and their commits will be merged
+        To check all the present branches <br>
+        -> git branch <br>
+        To create and switch a branch at once, then run <br>
+        -> git checkout -b flaskIntegration <br>
+        flaskIntegration is the name of new branch <br>
         <br>
         <img class="setimg" src="img18.PNG" alt="hear it is">
     </p>
     <hr>
 
 
-
+    <h2>18: To add the remote directory to your local directory </h2>
+    <hr>
+    <p>
+        -> First create a github account <br>
+        -> Create a New Repository(remote repository) <br>
+        -> git remote add origin https://github.com/reponame/git-in-one-video.git <br>
+        (Copy and paste it in git bash and your git repository will be added as 'origin' <br>
+        -> Now run "git remote" to check the remote repository. <br>
+        -> git remote -v // will show the url of origin as well <br>
+        -> git push origin master (push the master branch to origin) <br>
+        --> note : it will not work if remote directory is private. <br>
+        -> Now you will have to generate an SSH key and add it to your master directory and then push <br>
+        -->ssh-keygen -t ed25519 -C "example@gmail.com" // SSh key will be generated and saved in a file <br>
+        -->eval "$(ssh-agent -s)" // produce agent process id <br>
+        Agent pid 4652 // in my case agent pid <br>
+        *we have added ssh private keey to ssh-agent <br>
+        -->cat ~/.ssh/id_ed25519.pub //your ssh key will be produced
+        -->Copy it and paste it on your remote repository <br>
+        settings->SSH key and GPG keys -> click new SSH key <br>
+        --> git push -u origin master //will push your repository to github remote repository you created.
+        --> Only master branch will be pushed <br>
+        --> To push other branch as well first <br>
+        - switch to that branch i.e. git checkout feature1 <br>
+        - git push -u origin feature1
+        <br>
+        <br>
+        <img class="setimg" src="img19.PNG" alt="hear it is">
+    </p>
+    <hr>
 
 
 
